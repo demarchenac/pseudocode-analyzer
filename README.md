@@ -1,4 +1,6 @@
-# React Template
+# Pseudocode 'analyzer'
+
+## Created from [React Ts Sass Template](https://github.com/cddemar/react-ts-sass-template)
 
 <p>This template created with <strong>C.R.A</strong> contains the following:</p>
 <ul>
