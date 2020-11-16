@@ -1,4 +1,5 @@
 # Pseudocode 'analyzer'
+<p>Final project for the 'Algoritmos' course.</p> 
 
 ## Created from [React Ts Sass Template](https://github.com/cddemar/react-ts-sass-template)
 
