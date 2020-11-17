@@ -10,7 +10,7 @@ import styles from './controls.module.scss';
 export const Controls: React.FC = () => {
     const [action, setAction] = useState<string | null>(COMMON.ACTIONS.UNSELECTED);
     const [filename, setFilename] = useState<string | null>(null);
-    const [pseudocode, setPseudocode] = useState<string[] | null>([]);
+    const [pseudocode, setPseudocode] = useState<string[] | null>(['']);
     return (
         <Fragment>
             <Row center="xs">
@@ -46,7 +46,7 @@ export const Controls: React.FC = () => {
                     ) : null}
                 </Col>
             </Row>
-            {filename !== null && pseudocode !== null ? (
+            {filename !== null && pseudocode !== null && action === COMMON.ACTIONS.UPLOAD ? (
                 <Row center="xs">
                     <Col xs={10}>
                         <br />
@@ -54,13 +54,19 @@ export const Controls: React.FC = () => {
                             <Chip iconFamily="fas" icon="file-alt" text={filename}></Chip>
                             <span className={styles.file_info}>has {pseudocode.length} lines</span>
                         </Row>
+                    </Col>
+                </Row>
+            ) : null}
+            {filename !== null || action === COMMON.ACTIONS.WRITE ? (
+                <Row center="xs">
+                    <Col xs={10}>
                         <br />
                         <Row>
-                            <p>File content (editable):</p>
+                            <p>{action === COMMON.ACTIONS.WRITE ? 'Content' : 'File content'} (editable):</p>
                         </Row>
                         <Row>
                             <Editor
-                                value={pseudocode.join('\n')}
+                                value={pseudocode?.join('\n') || ''}
                                 onChange={(value) => setPseudocode(value.split('\n'))}
                             />
                         </Row>
