@@ -1,0 +1,24 @@
+@import '../../../../assets/styles/variables';
+
+.file_info {
+    padding: 10px 15px;
+}
+
+.calc {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid $sucess;
+    padding: 15px 0;
+    background-color: $primary;
+    color: $primary_contrast;
+    transition: 500ms;
+    font-size: 24px;
+
+    &:hover {
+        border: 1px solid $primary;
+        background-color: $sucess;
+        color: $primary;
+    }
+}

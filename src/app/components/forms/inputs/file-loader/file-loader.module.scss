@@ -1,0 +1,51 @@
+@import '../../../../../assets/styles/variables';
+
+.file_upload {
+    width: 100%;
+    height: 160px;
+    border: 4px dashed #ffffff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: $primary;
+        border: 4px dashed $sucess;
+    }
+}
+
+.file_upload_error {
+    width: 100%;
+    height: 160px;
+    border: 4px dashed #f44336;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f44336;
+
+    &:hover {
+        border: 4px dashed #f44336;
+    }
+}
+
+.file_upload_icon {
+    font-size: 40px;
+}
+
+.uploaded {
+    color: #244d26;
+    background-color: #3cd543;
+    padding: 5px;
+    margin-top: 5px;
+    margin-left: 1px;
+    margin-right: 1px;
+    border-radius: 2px;
+}

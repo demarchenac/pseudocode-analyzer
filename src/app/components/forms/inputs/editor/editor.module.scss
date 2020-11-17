@@ -1,0 +1,14 @@
+@import '../../../../../assets/styles/variables';
+
+.editor {
+    resize: none;
+    width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    background-color: $primary;
+    color: $primary_contrast;
+    border: 1px solid $primary_contrast;
+    border-radius: 5px;
+    padding: 5px;
+    height: calc(100% - 10px);
+}

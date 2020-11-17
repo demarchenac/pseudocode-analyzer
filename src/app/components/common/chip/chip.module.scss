@@ -1,0 +1,11 @@
+@import '../../../../assets/styles/variables';
+
+.content {
+    display: inline-flex;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 25px;
+    background-color: $primary;
+    border: 1px solid $sucess;
+    color: $sucess;
+}
