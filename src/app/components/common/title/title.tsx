@@ -9,7 +9,7 @@ export const Title: React.FC = () => {
             <Row center="xs">
                 <div className={styles.title_container}>
                     <a
-                        href="https://github.com/cddemar/pseudocode-analyzer/blob/main/src/assets/docs/Reglas.pdf"
+                        href="https://raw.githubusercontent.com/cddemar/pseudocode-analyzer/5c8180d4563c3912be56940dc42b991dc1fb7f16/src/assets/docs/Reglas.pdf"
                         target="_blank"
                         rel="help noopener noreferrer"
                     >
