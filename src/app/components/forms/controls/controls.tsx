@@ -86,7 +86,7 @@ const getTnOfFor = (lines: LineNode[], paraIndex: number): string => {
         }
     }
     const body = nerdamer(`(${internal.join('+') || 0} +${k} +2)`).toString();
-    const iterations = nerdamer(`((${vf}-${vi}+1)/${inc})`, undefined, 'expand').toString();
+    const iterations = nerdamer(`ceil((${vf}-${vi}+1)/${inc})`, undefined, 'expand').toString();
     const r = nerdamer(`(${iterations}) * (${body}) +2`).toString();
     console.log(` --- fin ciclo para con T(n) = (${iterations}) * (${body}) + 2 = ${r}`);
     return r;

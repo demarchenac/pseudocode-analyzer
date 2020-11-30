@@ -1,5 +1,6 @@
 {
     "name": "react-ts-sass-template",
+    "homepage": "https://cddemar.github.io/pseudocode-analyzer",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -35,7 +36,9 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "predeploy": "yarn build build",
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": [
@@ -62,6 +65,7 @@
         "eslint-config-prettier": "^6.15.0",
         "eslint-plugin-prettier": "^3.1.4",
         "eslint-plugin-react": "^7.21.5",
+        "gh-pages": "^3.1.0",
         "prettier": "^2.1.2"
     }
 }
