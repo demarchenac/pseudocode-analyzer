@@ -128,7 +128,7 @@ const getTn = (pseudocode: string[]): string => {
     }
 
     const ops = temp.filter((v) => v !== '0' && v !== 0).join('+');
-    const raw = nerdamer(ops);
+    const raw = nerdamer(ops, undefined, 'expand');
 
     console.log(raw.toString());
     console.log(' --- fin --- ');
