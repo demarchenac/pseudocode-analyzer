@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/pseudocode-analyzer/static/css/main.8135ec47.chunk.css",
+    "main.js": "/pseudocode-analyzer/static/js/main.40e24ff7.chunk.js",
+    "main.js.map": "/pseudocode-analyzer/static/js/main.40e24ff7.chunk.js.map",
+    "runtime-main.js": "/pseudocode-analyzer/static/js/runtime-main.210758d5.js",
+    "runtime-main.js.map": "/pseudocode-analyzer/static/js/runtime-main.210758d5.js.map",
+    "static/js/2.2d3d9cb9.chunk.js": "/pseudocode-analyzer/static/js/2.2d3d9cb9.chunk.js",
+    "static/js/2.2d3d9cb9.chunk.js.map": "/pseudocode-analyzer/static/js/2.2d3d9cb9.chunk.js.map",
+    "static/js/3.99512d4e.chunk.js": "/pseudocode-analyzer/static/js/3.99512d4e.chunk.js",
+    "static/js/3.99512d4e.chunk.js.map": "/pseudocode-analyzer/static/js/3.99512d4e.chunk.js.map",
+    "index.html": "/pseudocode-analyzer/index.html",
+    "static/css/main.8135ec47.chunk.css.map": "/pseudocode-analyzer/static/css/main.8135ec47.chunk.css.map",
+    "static/js/2.2d3d9cb9.chunk.js.LICENSE.txt": "/pseudocode-analyzer/static/js/2.2d3d9cb9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.210758d5.js",
+    "static/js/2.2d3d9cb9.chunk.js",
+    "static/css/main.8135ec47.chunk.css",
+    "static/js/main.40e24ff7.chunk.js"
+  ]
+}
