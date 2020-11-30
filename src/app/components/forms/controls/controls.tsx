@@ -14,8 +14,9 @@ interface LineNode {
     checked: boolean;
 }
 
-const getTnOfIf = (lines: LineNode[], siIndex: number): number => {
+const getTnOfIf = (lines: LineNode[], siIndex: number): string => {
     // validations
+    console.log(' --- se encontro condicional --- ');
     const parenthesisRegExp = /\(([a-zA-Z][a-zA-Z0-9]*|\d+)(\s)*[<>=]*(\s)*([a-zA-Z][a-zA-Z0-9]*|\d+)\)/g;
     const matches = lines[siIndex].value.toLowerCase().trim().match(parenthesisRegExp) || [];
 
@@ -45,15 +46,23 @@ const getTnOfIf = (lines: LineNode[], siIndex: number): number => {
             else worstCase = bloqueSino;
         }
     }
-
-    return matches.length + worstCase;
+    console.log(' --- fin condicional con T(n) = ' + (matches.length + worstCase));
+    const sum = matches.length + worstCase;
+    return sum.toString();
 };
 
 const getTnOfFor = (lines: LineNode[], paraIndex: number): string => {
+    console.log(' --- se encontro ciclo para --- ');
     const paraParameters = lines[paraIndex].value.replace('para', '').trim().split(',');
-    const vi = paraParameters[0].trim().split('=')[1];
-    const vf = paraParameters[1];
-    const inc = paraParameters[2];
+    let vi = paraParameters[0].trim().split('=')[1];
+    let vf = paraParameters[1];
+    let inc = paraParameters[2];
+    if (inc.startsWith('-')) {
+        const t = vf;
+        vf = vi;
+        vi = t;
+        inc = inc.replace('-', '');
+    }
     const internal = [];
     let k = 0;
     for (let j = paraIndex; j < lines.length; j++) {
@@ -76,11 +85,11 @@ const getTnOfFor = (lines: LineNode[], paraIndex: number): string => {
             }
         }
     }
-    return nerdamer(
-        `(${internal.join('+') || 0} +${k} +2)*((${vf}-${vi}+1)/${inc}) +2`,
-        undefined,
-        'expand',
-    ).toString();
+    const body = nerdamer(`(${internal.join('+') || 0} +${k} +2)`).toString();
+    const iterations = nerdamer(`((${vf}-${vi}+1)/${inc})`, undefined, 'expand').toString();
+    const r = nerdamer(`(${iterations}) * (${body}) +2`).toString();
+    console.log(` --- fin ciclo para con T(n) = (${iterations}) * (${body}) + 2 = ${r}`);
+    return r;
 };
 
 const getTn = (pseudocode: string[]): string => {
@@ -88,6 +97,11 @@ const getTn = (pseudocode: string[]): string => {
     const lines: LineNode[] = pseudocode.map((line) => {
         return { value: line, checked: false };
     });
+
+    console.log(
+        'ver reglas en:  https://raw.githubusercontent.com/cddemar/pseudocode-analyzer/5c8180d4563c3912be56940dc42b991dc1fb7f16/src/assets/docs/Reglas.pdf',
+    );
+    console.log(' --- inicio --- ');
 
     for (let i = 0; i < lines.length; i++) {
         if (!lines[i].checked) {
@@ -117,6 +131,7 @@ const getTn = (pseudocode: string[]): string => {
     const raw = nerdamer(ops);
 
     console.log(raw.toString());
+    console.log(' --- fin --- ');
     return raw.toTeX();
 };
 
