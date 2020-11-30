@@ -8,11 +8,13 @@ export const Title: React.FC = () => {
         <Fragment>
             <Row center="xs">
                 <div className={styles.title_container}>
-                    <span className={styles.title}>
-                        <FontAwesomeIcon icon={['fas', 'terminal']} />
-                    </span>
-                    <span className={styles.title}>&nbsp; Pseudocode &nbsp;</span>
-                    <span className={styles.title}>Analyzer</span>
+                    <a href="../../../../assets/docs/Reglas.pdf" target="_blank" rel="help noopener noreferrer">
+                        <span className={styles.title}>
+                            <FontAwesomeIcon icon={['fas', 'terminal']} />
+                        </span>
+                        <span className={styles.title}>&nbsp; Analizador de &nbsp;</span>
+                        <span className={styles.title}>Pseudocódigo</span>
+                    </a>
                 </div>
             </Row>
             <hr />

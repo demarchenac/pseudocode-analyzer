@@ -15,7 +15,7 @@ export const FileLoader: React.FC<Props> = ({ extension, onUpdate }: Props) => {
     const handleFileUpload = (files: FileList) => {
         setError(null);
         if (files) {
-            console.log(files);
+            //console.log(files);
             if (files.length > 1) {
                 setError('Solo se acepta un archivo');
                 return;
@@ -50,7 +50,7 @@ export const FileLoader: React.FC<Props> = ({ extension, onUpdate }: Props) => {
                         style={{ visibility: 'hidden' }}
                         type="file"
                         onChange={(event) => {
-                            console.log(event);
+                            //console.log(event);
                             if (event.target.files !== null) handleFileUpload(event.target.files);
                         }}
                     />
@@ -69,7 +69,7 @@ export const FileLoader: React.FC<Props> = ({ extension, onUpdate }: Props) => {
                     >
                         <FontAwesomeIcon icon={['fas', 'file-import']} className={styles.file_upload_icon} />
                         <p style={{ padding: 5 }}>
-                            {error !== null ? error : `Pick a .${extension} file and drop it here`}
+                            {error !== null ? error : `Cargue o seleccione un archivo .${extension} y sueltelo aquí`}
                         </p>
                     </div>
                 </Col>
