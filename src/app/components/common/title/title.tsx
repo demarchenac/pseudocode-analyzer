@@ -8,7 +8,11 @@ export const Title: React.FC = () => {
         <Fragment>
             <Row center="xs">
                 <div className={styles.title_container}>
-                    <a href="../../../../assets/docs/Reglas.pdf" target="_blank" rel="help noopener noreferrer">
+                    <a
+                        href="https://github.com/cddemar/pseudocode-analyzer/blob/main/src/assets/docs/Reglas.pdf"
+                        target="_blank"
+                        rel="help noopener noreferrer"
+                    >
                         <span className={styles.title}>
                             <FontAwesomeIcon icon={['fas', 'terminal']} />
                         </span>
